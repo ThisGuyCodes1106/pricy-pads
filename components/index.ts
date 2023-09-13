@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomerFilter";
 import SearchCity from "./SearchCity";
+import PropertyCard from "./PropertyCard";
+import PropertyDetails from "./PropertyDetails";
 
 export {
     Hero,
@@ -13,5 +15,7 @@ export {
     CustomButton,
     SearchBar,
     CustomFilter,
-    SearchCity
+    SearchCity,
+    PropertyCard,
+    PropertyDetails
 }

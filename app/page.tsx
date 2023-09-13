@@ -1,7 +1,15 @@
-import { Hero, SearchBar, CustomFilter } from "@/components/index";
+import { Hero, SearchBar, CustomFilter, PropertyCard } from "@/components/index";
+import { fetchProperties } from "@/utils";
+import { PropertyProps } from "@/Types/index";
 
 
-export default function Home() {
+export default async function Home() {
+
+  const allProperties = await fetchProperties()
+  // console.log(allProperties.results);
+
+  const isDataEmpty = !Array.isArray(allProperties) || allProperties.length < 1 || !allProperties;  
+
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -19,9 +27,22 @@ export default function Home() {
             <SearchBar />
 
             <div className="home__filter-container">
-              <CustomFilter title="price" />
+              <CustomFilter />
             </div>
         </div>
+
+        {!isDataEmpty ? (
+          <div className="home__properties-wrapper">
+            {allProperties?.map((property: PropertyProps) => (
+              <PropertyCard property={property} />
+            ))}
+          </div>
+        ) : (
+          <div className="home__error-container">
+            <h2 className="text-black text-xl font-bold">Oops, no results found</h2>
+            <p>{allProperties.message}</p>
+          </div>
+        )}
 
       </div>
     </main>
