@@ -10,9 +10,9 @@ interface PropertyCardProps {
 }
 
 const PropertyCard = ({property}: PropertyCardProps) => {
-    const { bathrooms, bedrooms, price, city, country, imgSrc, streetAddress, livingArea } = property
+    const { bathrooms, bedrooms, price, city, country, imgSrc, streetAddress, livingArea, zpid } = property
 
-    const [isSelected, setIsSelected] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false)
 
     return (
         <div className='property-card group'>
@@ -59,14 +59,14 @@ const PropertyCard = ({property}: PropertyCardProps) => {
                         containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
                         textStyles='text-white text-[14px] leading-[17px] font-bold'
                         rightIcon='/right-arrow.svg'
-                        handleClick={() => setIsSelected(true)}
+                        handleClick={() => setModalOpen(true)}
                     />
                 </div>
             </div>
 
             <PropertyDetails 
-                isSelected={isSelected}
-                closeModal={() => setIsSelected(false)}
+                modalOpen={modalOpen}
+                closeModal={() => setModalOpen(false)}
                 property={property}
             />
         </div>
