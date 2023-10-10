@@ -11,8 +11,8 @@ function Hero() {
   return (
     <div className="hero">
         <div className="flex-1 pt-36 padding-x">
-            <h1 className="hero__title">Hero Title</h1>
-            <p className="hero__subtitle">Hero subtitle</p>
+            <h1 className="hero__title">PricyPads</h1>
+            <p className="hero__subtitle">Your gateway to absurdly priced abodes</p>
             <CustomButton 
               title="Explore Properties"
               containerStyles="bg-primary-blue text-white rounded-full mt-10"

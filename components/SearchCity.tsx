@@ -3,7 +3,7 @@
 import React, { useState, Fragment } from 'react'
 import { SearchCityProps } from "@/Types";
 import { Combobox, Transition } from '@headlessui/react'
-import { cities } from "@/constants";
+import { usCities } from "@/constants";
 import Image from "next/image";
 
 const SearchCity = ({city, setCity}: SearchCityProps) => {
@@ -12,8 +12,8 @@ const SearchCity = ({city, setCity}: SearchCityProps) => {
 
     const filteredCities = 
         query === ''
-            ? cities
-            : cities.filter((city) => {
+            ? usCities
+            : usCities.filter((city) => {
                 return city.name.toLowerCase().replace(/\s+/g, "").includes(query.toLowerCase().replace(/\s+/g, ""))
             })
 
@@ -33,7 +33,7 @@ const SearchCity = ({city, setCity}: SearchCityProps) => {
                 <Combobox.Input
                     className="search-property__input"
                     displayValue={(city: {name: string}) => city.name}
-                    placeholder='Leeds'
+                    placeholder='Houston'
                     onChange={(event) => setQuery(event.target.value)}
                 />
 

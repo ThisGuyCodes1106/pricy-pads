@@ -8,7 +8,7 @@ export default async function Home() {
   const allProperties = await fetchProperties()
   // console.log(allProperties.results);
 
-  const isDataEmpty = !Array.isArray(allProperties) || allProperties.length < 1 || !allProperties;  
+  const isDataEmpty = !Array.isArray(allProperties) || allProperties.length < 1 || !allProperties;
 
   return (
     <main className="overflow-hidden">

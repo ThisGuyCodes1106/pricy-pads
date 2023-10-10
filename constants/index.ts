@@ -20,6 +20,30 @@ export const cities = [
   { id: 19, name: "Houston", country: "United States" },
   { id: 20, name: "Manchester", country: "United Kingdom" }
 ];
+
+export const usCities = [
+  { id: 1, name: "New York City" },
+  { id: 2, name: "Los Angeles" },
+  { id: 3, name: "Chicago" },
+  { id: 4, name: "Houston" },
+  { id: 5, name: "Phoenix" },
+  { id: 6, name: "Philadelphia" },
+  { id: 7, name: "San Antonio" },
+  { id: 8, name: "San Diego" },
+  { id: 9, name: "Dallas" },
+  { id: 10, name: "San Jose" },
+  { id: 11, name: "Austin" },
+  { id: 12, name: "Jacksonville" },
+  { id: 13, name: "Fort Worth" },
+  { id: 14, name: "Columbus" },
+  { id: 15, name: "Charlotte" },
+  { id: 16, name: "San Francisco" },
+  { id: 17, name: "Indianapolis" },
+  { id: 18, name: "Seattle" },
+  { id: 19, name: "Denver" },
+  { id: 20, name: "Washington, D.C." },
+  // Add more cities as needed
+];
   
   export const yearsOfProduction = [
     { title: "Year", value: "" },

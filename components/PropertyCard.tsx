@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from "next/image";
 import { PropertyProps } from "@/Types/index";
 import { CustomButton, PropertyDetails } from "@/components";
+import { fetchPropertyData } from '@/utils';
 
 interface PropertyCardProps {
     property: PropertyProps;
@@ -13,6 +14,13 @@ const PropertyCard = ({property}: PropertyCardProps) => {
     const { bathrooms, bedrooms, price, city, country, imgSrc, streetAddress, livingArea, zpid } = property
 
     const [modalOpen, setModalOpen] = useState(false)
+
+    const getPropertyData = async (propertyID: number) => {
+        const propertyData = await fetchPropertyData(propertyID)
+        console.log(propertyData);
+        
+        setModalOpen(true)
+    }
 
     return (
         <div className='property-card group'>
@@ -59,7 +67,7 @@ const PropertyCard = ({property}: PropertyCardProps) => {
                         containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
                         textStyles='text-white text-[14px] leading-[17px] font-bold'
                         rightIcon='/right-arrow.svg'
-                        handleClick={() => setModalOpen(true)}
+                        handleClick={() => getPropertyData(zpid)}
                     />
                 </div>
             </div>
